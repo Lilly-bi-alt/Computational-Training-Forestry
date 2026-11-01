@@ -53,5 +53,25 @@ Final_cv <- function(x) {
   Final_cv <- cv_to_percent(total_cv)
   return(Final_cv)
     }
-x<- c(1, 2, 3, 4, 5)
+
+#GUARD FUNCTION
+check_positive <- function(x) {
+  if (!is.numeric(x)) {
+    stop("Guard Error: Data must be numeric.")
+  }
+  x <- x[!is.na(x)]
+  if (length(x) == 0) {
+    stop("Guard Error: No valid values to check.")
+  }
+  n_negative <- sum(x < 0)
+  n_zero <- sum(x == 0)
+  if (n_negative > 0) {
+    stop(paste("Guard Error: Found", n_negative, "negative value(s)."))
+  }
+  if (n_zero > 0) {
+    stop(paste("Guard Error: Found", n_zero, "zero value(s)."))
+  }
+  return(TRUE)
+}
+x<- c(12, 28, 30, 34, 38)
 Final_cv(x)
