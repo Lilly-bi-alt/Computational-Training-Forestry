@@ -184,5 +184,5 @@ abline(lm(Height_m ~ DBH_cm, data = plot_dat), col = "red", lwd = 2)
  
 par(mfrow = c(1, 1))
 dev.off()
- 
+
 cat("\nFigure saved to figures/homework_unit2_diagnostics.png\n")
