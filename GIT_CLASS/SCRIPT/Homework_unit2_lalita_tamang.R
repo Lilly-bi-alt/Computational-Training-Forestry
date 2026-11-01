@@ -186,3 +186,4 @@ par(mfrow = c(1, 1))
 dev.off()
 
 cat("\nFigure saved to figures/homework_unit2_diagnostics.png\n")
+
